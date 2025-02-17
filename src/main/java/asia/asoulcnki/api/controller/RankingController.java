@@ -27,7 +27,7 @@ public class RankingController {
     @GetMapping("/")
     @ResponseBody
     public ApiResult<RankingResultVo> getRankingResult(@RequestParam int sortMode, @RequestParam int timeRangeMode,
-                                                       @RequestParam(value = "ids", required = false) List<Integer> ids, @RequestParam(value = "keywords",
+                                                       @RequestParam(value = "ids", required = false) List<Long> ids, @RequestParam(value = "keywords",
         required = false) List<String> keywords, @RequestParam int pageSize, @RequestParam int pageNum) {
         // 选择排序方式和时间筛选范围
         SortMethodEnum sortMethod;

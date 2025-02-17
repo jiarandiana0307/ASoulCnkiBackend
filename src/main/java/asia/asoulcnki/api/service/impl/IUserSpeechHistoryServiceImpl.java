@@ -12,7 +12,7 @@ public class IUserSpeechHistoryServiceImpl implements IUserSpeechHistoryService 
     private static final Logger logger = LoggerFactory.getLogger(IUserSpeechHistoryServiceImpl.class);
 
     @Override
-    public UserSpeechHistoryVO getHistory(Integer mid) {
+    public UserSpeechHistoryVO getHistory(Long mid) {
         UserSpeechHistoryList db = UserSpeechHistoryList.getInstance();
         return db.get(mid);
     }

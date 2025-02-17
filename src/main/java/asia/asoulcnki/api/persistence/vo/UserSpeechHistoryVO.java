@@ -8,7 +8,7 @@ import java.util.List;
 
 @Data
 public class UserSpeechHistoryVO implements Serializable {
-    private Integer mid;
+    private Long mid;
 
     private List<Reply> replies;
 }

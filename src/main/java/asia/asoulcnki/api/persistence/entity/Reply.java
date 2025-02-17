@@ -45,13 +45,13 @@ public class Reply implements Serializable {
      * 发布评论者 id
      */
     @JsonProperty("mid")
-    private int mid;
+    private long mid;
 
     /**
      * 动态发布者 id
      */
     @JsonProperty("uid")
-    private int uid;
+    private long uid;
 
     /**
      * 视频原稿件 id

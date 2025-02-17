@@ -47,5 +47,5 @@ public class UserDynamic implements Serializable {
      * 发布动态者 id
      */
     @JsonProperty("user_id")
-    private int userID;
+    private long userID;
 }

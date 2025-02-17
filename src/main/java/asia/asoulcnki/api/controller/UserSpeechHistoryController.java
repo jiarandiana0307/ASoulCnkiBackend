@@ -19,7 +19,7 @@ public class UserSpeechHistoryController {
     private IUserSpeechHistoryService iUserSpeechHistoryService;
 
     @GetMapping("/{mid}")
-    public ApiResult<UserSpeechHistoryVO> handlerGetHistory(@PathVariable("mid") Integer mid){
+    public ApiResult<UserSpeechHistoryVO> handlerGetHistory(@PathVariable("mid") Long mid){
         return ApiResult.ok(iUserSpeechHistoryService.getHistory(mid));
     }
 }

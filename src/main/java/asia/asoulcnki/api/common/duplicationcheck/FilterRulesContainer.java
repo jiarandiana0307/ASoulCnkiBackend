@@ -15,7 +15,7 @@ public class FilterRulesContainer {
 	public Set<Predicate<Reply>> predicates = new HashSet<>();
 
 
-	public void addUserIDInFilter(List<Integer> userIDs) {
+	public void addUserIDInFilter(List<Long> userIDs) {
 		predicates.add(new UserIdInFilter(userIDs));
 	}
 

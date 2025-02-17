@@ -62,10 +62,10 @@ public class UserSpeechHistoryList implements Serializable {
     /**
      * 二分查找获取根据 mid 获取其在 UserSpeechHistory 列表中的下标
      *
-     * @param id int
+     * @param id long
      * @return 下标
      */
-    public int getIndex(int id) {
+    public int getIndex(long id) {
         int max = histories.size();
         int min = 0;
         int half = max / 2;
@@ -82,7 +82,7 @@ public class UserSpeechHistoryList implements Serializable {
         return -1;
     }
 
-    public UserSpeechHistoryVO get(int id) {
+    public UserSpeechHistoryVO get(long id) {
         UserSpeechHistoryVO vo = new UserSpeechHistoryVO();
         int max = histories.size();
         System.err.println(max);
@@ -131,11 +131,11 @@ public class UserSpeechHistoryList implements Serializable {
     @ToString
     static class UserSpeechHistory implements Serializable {
         private static final long serialVersionUID = -1264694752077837892L;
-        private Integer mid;
+        private Long mid;
         private List<Reply> items;
-        private static final Set<Integer> KEYS = new HashSet<>();
+        private static final Set<Long> KEYS = new HashSet<>();
 
-        public UserSpeechHistory(Integer mid) {
+        public UserSpeechHistory(Long mid) {
             this.mid = mid;
             this.items = new ArrayList<>();
             KEYS.add(mid);

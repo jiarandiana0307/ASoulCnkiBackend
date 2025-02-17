@@ -27,10 +27,10 @@ public class SearchResultVO implements Serializable {
     private long dynamicId;
 
     @JsonProperty("mid")
-    private int mid;
+    private long mid;
 
     @JsonProperty("uid")
-    private int uid;
+    private long uid;
 
     @JsonProperty("oid")
     @JsonSerialize(using = ToStringSerializer.class)

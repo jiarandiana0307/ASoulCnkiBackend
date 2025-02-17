@@ -4,5 +4,5 @@ import asia.asoulcnki.api.common.response.ApiResult;
 import asia.asoulcnki.api.persistence.vo.UserSpeechHistoryVO;
 
 public interface IUserSpeechHistoryService {
-    UserSpeechHistoryVO getHistory(Integer mid);
+    UserSpeechHistoryVO getHistory(Long mid);
 }

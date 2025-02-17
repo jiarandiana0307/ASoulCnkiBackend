@@ -8,9 +8,9 @@ import java.util.function.Predicate;
 
 public class UserIdInFilter implements Predicate<Reply> {
 
-	private final List<Integer> userIDs;
+	private final List<Long> userIDs;
 
-	public UserIdInFilter(final List<Integer> userIDs) {
+	public UserIdInFilter(final List<Long> userIDs) {
 		this.userIDs = userIDs;
 	}
 
@@ -19,7 +19,7 @@ public class UserIdInFilter implements Predicate<Reply> {
 		if (userIDs == null || userIDs.isEmpty()) {
 			return true;
 		}
-		for (Integer id : userIDs) {
+		for (Long id : userIDs) {
 			if (id != null && reply.getUid() == id) {
 				return true;
 			}
