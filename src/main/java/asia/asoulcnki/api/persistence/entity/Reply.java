@@ -35,13 +35,6 @@ public class Reply implements Serializable {
     private int typeId;
 
     /**
-     * 动态 id
-     */
-    @JsonProperty("dynamic_id")
-    @JsonSerialize(using = ToStringSerializer.class)
-    private long dynamicId;
-
-    /**
      * 发布评论者 id
      */
     @JsonProperty("mid")

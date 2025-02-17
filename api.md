@@ -83,7 +83,6 @@ Content-Type: application/json
         "reply": {
           "rpid": "5004265317",
           "type_id": 17,
-          "dynamic_id": "552086903093256371",
           "mid": 5421504,
           "uid": 672328094,
           "oid": "552086903093256371",
@@ -150,7 +149,6 @@ GET /v1/api/ranking/?pageSize=5&pageNum=1&timeRangeMode=0&sortMode=0&ids=&keywor
       {
         "rpid": "5004265317",
         "type_id": 17,
-        "dynamic_id": "552086903093256371",
         "mid": 5421504,
         "uid": 672328094,
         "oid": "552086903093256371",
@@ -161,7 +159,7 @@ GET /v1/api/ranking/?pageSize=5&pageNum=1&timeRangeMode=0&sortMode=0&ids=&keywor
         "origin_rpid": "-1",
         "similar_count": 0,
         "similar_like_sum": 166
-      },
+      }
     ],
     "all_count": 5379,
     "start_time": 1606137506,

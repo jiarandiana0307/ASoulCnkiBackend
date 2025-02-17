@@ -21,11 +21,6 @@ public class SearchResultVO implements Serializable {
     @JSONField(name = "type_id")
     private int typeId;
 
-    @JsonProperty("dynamic_id")
-    @JSONField(name = "dynamic_id")
-    @JsonSerialize(using = ToStringSerializer.class)
-    private long dynamicId;
-
     @JsonProperty("mid")
     private long mid;
 

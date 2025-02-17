@@ -14,13 +14,6 @@ public class UserDynamic implements Serializable {
     private static final long serialVersionUID = 5731833077679549516L;
 
     /**
-     * 动态 id
-     */
-    @TableId(value = "dynamic_id")
-    @JsonProperty("dynamic_id")
-    private Long dynamicId;
-
-    /**
      * 动态类型 id
      * 1:      视频
      * 11/17:  文字动态
