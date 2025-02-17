@@ -159,8 +159,9 @@ public class ICheckServiceImpl implements ICheckService {
             case 1:
                 return String.format(" %s/video/av%d/#reply%d", baseUrl, reply.getOid(), reply.getRpid());
             case 11:
+                return String.format(" %s/%d?type=2#reply%d", dynamicBaseUrl, reply.getOid(), reply.getRpid());
             case 17:
-                return String.format(" %s/%d/#reply%d", dynamicBaseUrl, reply.getDynamicId(), reply.getRpid());
+                return String.format(" %s/%d/#reply%d", dynamicBaseUrl, reply.getOid(), reply.getRpid());
             case 12:
                 return String.format(" %s/read/cv%d/#reply%d", baseUrl, reply.getOid(), reply.getRpid());
             default:
