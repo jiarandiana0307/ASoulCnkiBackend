@@ -3,27 +3,32 @@
 [![Publish Docker](https://github.com/ASoulCnki/ASoulCnkiBackend/actions/workflows/build-docker.yml/badge.svg?branch=master)](https://github.com/ASoulCnki/ASoulCnkiBackend/actions/workflows/build-docker.yml)
 
 源项目：https://github.com/ASoulCnki/ASoulCnki
-网站地址：https://asoulcnki.asia
+网站地址：https://asoulcnki.cbu.net
 
 ## 部署
 
 ### 1 系统要求
 
 1. Java 8
-2. Java堆内存1500M及其以上
+2. Java堆内存1500MB及其以上（取决于数据量）
 
 ### 2 运行
 
 #### 2.1 依赖json文件运行
 
-##### 2.1.1 （方法一）快速开始
-1. 将 [bilibili_cnki_reply.json](https://drive.google.com/file/d/151oz560vj2T2uwxYrRbxq1NPYwvx_dNf/view?usp=sharing) 放入项目根目录下的 data 文件夹
+##### 2.1.1 下载数据文件bilibili_cnki_reply.json
+
+- 旧数据（截止至2021年8月中旬），包含约139万条评论数据，需要Java堆内存1500MB：[bilibili_cnki_reply.json](https://drive.google.com/file/d/151oz560vj2T2uwxYrRbxq1NPYwvx_dNf/view?usp=sharing)
+- 新数据（更新至2025年1月21日），包含约468万条评论数据，已过滤掉字数少于30字的评论，需解压，需要Java堆内存7GB：[JTLjrYCdIJrpaLuVntv.zip](https://fileditchfiles.me/file.php?f=/s21/JTLjrYCdIJrpaLuVntv.zip)
+
+##### 2.1.2 （方法一）快速开始
+1. 将bilibili_cnki_reply.json放入项目根目录下的 data 文件夹
 2. 运行 src/test/asia/asoulcnki.api/StartTrainTest.testStartTrain 开始训练
 3. 训练完毕后，运行 ApiApplication 启动服务，即可正常使用
 
-##### 2.1.2 （方法二）使用其他语言调接口训练
+##### 2.1.3 （方法二）使用其他语言调接口训练
 1. 修改application-demo.yml中的secure.key
-2. 将bilibili_cnki_reply.json([样本](https://drive.google.com/file/d/151oz560vj2T2uwxYrRbxq1NPYwvx_dNf/view?usp=sharing))放入data文件夹
+2. 将bilibili_cnki_reply.json放入data文件夹
 3. 运行springboot后端
 4. 调用后端train接口训练数据 训练需要较长时间(约一分钟)  
    [示例请求](./dev/start_train.py)(python):
