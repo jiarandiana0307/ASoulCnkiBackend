@@ -24,7 +24,7 @@
 ##### 2.1.2 （方法一）快速开始
 1. 将bilibili_cnki_reply.json放入项目根目录下的 data 文件夹
 2. 运行 src/test/asia/asoulcnki.api/StartTrainTest.testStartTrain 开始训练
-3. 训练完毕后，运行 ApiApplication 启动服务，即可正常使用
+3. 训练完毕后，运行 ApiApplication 启动服务，即可正常使用 (note: 见 2.1.3 运行构建，构建时会自动运行这段代码。)
 
 ##### 2.1.3 （方法二）使用其他语言调接口训练
 1. 修改application-demo.yml中的secure.key
@@ -40,6 +40,22 @@ base_url = "http://localhost:8000/v1/api/data/train"
 r = requests.post(base_url, json={'secure_key': CONTROL_SECURE_KEY, 'start_time': 0})
 print(r.json())
 ```
+
+#### 2.1.3 完成数据下载后，使用 maven 构建项目
+
+运行：
+
+```shell
+mvn clean package
+```
+
+此时 maven 会自动下载依赖并对项目进行编译打包，同时会自动运行上方的 src/test/asia/asoulcnki.api/StartTrainTest.testStartTrain 预处理对应的数据（原作者真是个天才，放到测试单元里运行这段代码），如果数据预处理成功，那么会在项目根目录下的 ./target 目录下生成一个 `api-latest.jar` 文件。可通过该命令：
+
+```shell
+java -jar api-latest.jar
+```
+
+启动项目。
 
 #### 2.2 依赖数据库运行
 
@@ -58,7 +74,9 @@ sh bin/cleanup.sh
 
 在初始化数据库完成后，启动项目，可以按照2.1的方式训练数据，也可以参照api文档从数据库拉取数据来训练
 
-#### 2.3 使用docker运行
+#### 2.3 使用docker运行 (deprecated)
+
+> 本仓库目前已不再负责维护 docker 镜像。因此不保证原项目的 docker 镜像能够正常工作。
 
 ```shell
 # 构建镜像
