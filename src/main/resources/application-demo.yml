@@ -45,7 +45,7 @@ application:
   description: 枝网查重后台
 
 secure:
-  key: 123456
+  key: womenshia-soul!
 
 swagger:
   enabled: true
