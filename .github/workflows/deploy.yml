@@ -1,0 +1,38 @@
+name: Deploy to Server
+
+# todo: 等后面优化好后端后，再添加 Build 的测试步骤
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install sshpass
+        run: sudo apt-get install -y sshpass
+
+      - name: Deploy to Server
+        env:
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+          SERVER_USER: ${{ secrets.SERVER_USER }}
+          SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
+        run: |
+          echo "Connecting to server..."
+          sshpass -p $SERVER_PASSWORD ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP << 'EOF'
+            export MAVEN_OPTS="-Xmx9g -Xms512m"
+            cd /home/ubuntu/ASoulCnkiBackend
+            # 跳过测试，因为枝网老代码的测试会尝试将数据 load 进内存里.......
+            mvn clean package -Dmaven.test.skip=true
+            if [ $? -eq 0 ]; then
+              pm2 restart asoul-cnki-backend
+            else
+              echo "Maven build failed" >&2
+              exit 1
+            fi
+          EOF
