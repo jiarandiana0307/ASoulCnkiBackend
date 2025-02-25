@@ -25,6 +25,7 @@ jobs:
         run: |
           echo "Connecting to server..."
           sshpass -p $SERVER_PASSWORD ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP << 'EOF'
+            export MAVEN_OPTS="-Xmx9g -Xms512m"
             cd /home/ubuntu/ASoulCnkiBackend
             # 跳过测试，因为枝网老代码的测试会尝试将数据 load 进内存里.......
             mvn clean package -Dmaven.test.skip=true
