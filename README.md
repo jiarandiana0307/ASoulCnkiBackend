@@ -19,7 +19,7 @@
 
 ##### 2.1.1 下载数据文件bilibili_cnki_reply.json
 
-- 旧数据（截止至2021年8月中旬），包含约139万条评论数据，需要Java堆内存1500MB：[bilibili_cnki_reply.json](https://drive.google.com/file/d/151oz560vj2T2uwxYrRbxq1NPYwvx_dNf/view?usp=sharing)
+- 旧数据（截止至2021年8月中旬），包含约139万条评论数据，需要Java堆内存1500MB：[bilibili_cnki_reply_2021-08-10.json](https://anonymfile.com/f/bfcf3d2b-0029-4bc1-85fd-9559167306c3)
 - 新数据（更新至2025年1月21日），包含约468万条评论数据，已过滤掉字数少于30字的评论，需解压，需要Java堆内存7GB：[JTLjrYCdIJrpaLuVntv.zip](https://fileditchfiles.me/file.php?f=/s21/JTLjrYCdIJrpaLuVntv.zip)
 
 ##### 2.1.2 （方法一）快速开始
