@@ -2,7 +2,7 @@
 
 源项目：[https://github.com/ASoulCnki/ASoulCnki](https://github.com/ASoulCnki/ASoulCnki)
 
-网站地址：[https://asoulcnki.cbu.net](https://asoulcnki.cbu.net)
+网站地址：[https://cnki.asoul.us.kg](https://cnki.asoul.us.kg)
 
 服务监控地址: [http://43.134.33.161:3001/status/asoul](http://43.134.33.161:3001/status/asoul)
 
